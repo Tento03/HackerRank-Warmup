@@ -26,14 +26,14 @@ import kotlin.text.*
 
 fun timeConversion(s: String): String {
     // Write your code here
-    var amPm=s.takeLast(2)
+    var format=s.takeLast(2)
     var hour=s.substring(0,2).toInt()
     var minute=s.substring(2,8)
     
-    if(amPm=="AM" && hour==12){
+    if(format=="AM" && hour==12){
         hour=0
     }
-    else if(amPm=="PM" && hour!=12){
+    else if(format=="PM" && hour!=12){
         hour+=12
     }
     return "%02d%s".format(hour,minute)
